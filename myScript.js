@@ -37,9 +37,9 @@ const score = document.querySelector(".score");
                 player.speed = 5;
                 lines.forEach(function(item){
 
-                    if(item.y >= 1500)
+                    if(item.y >= 700)
                     {
-                        item.y -= 1560;
+                        item.y -= 750;
                     }
                     item.y += player.speed;
                     item.style.top = (item.y) + "px";
@@ -64,7 +64,7 @@ const score = document.querySelector(".score");
                     console.log("Boom");
                     endGame();
                 }
-                if(item.y >= 1500)
+                if(item.y >= 750)
                 {
                     item.y = -300;
                     item.style.left = Math.floor(Math.random() * 350) + "px";  
@@ -85,8 +85,8 @@ const score = document.querySelector(".score");
                     moveLines();
                     moveEnemy(car);
 
-                    if(keys.ArrowUp && player.y > 200){ player.y -= player.speed;}
-                    if(keys.ArrowDown && player.y < 1100){ player.y += player.speed;}
+                    if(keys.ArrowUp && player.y > 70){ player.y -= player.speed;}
+                    if(keys.ArrowDown && player.y < 650){ player.y += player.speed;}
                     if(keys.ArrowLeft && player.x > 0){ player.x -= player.speed;}
                     if(keys.ArrowRight && player.x < 350){ player.x += player.speed;}
 
@@ -116,7 +116,7 @@ const score = document.querySelector(".score");
 
                     let roadLine = document.createElement('div');
                     roadLine.setAttribute('class', 'lines');
-                    roadLine.y = x*120;
+                    roadLine.y = x*150;
                     roadLine.style.top = roadLine.y + "px";
                     gameArea.appendChild(roadLine);
 
@@ -130,11 +130,11 @@ const score = document.querySelector(".score");
                 player.y = car.offsetTop;
 
                 
-                for(x=0; x<5; x++){
+                for(x=0; x<3; x++){
 
                     let enemyCar = document.createElement('div');
                     enemyCar.setAttribute('class', 'enemy');
-                    enemyCar.y = ((x+1)*400)*-1;
+                    enemyCar.y = ((x+1)*350)*-1;
                     enemyCar.style.top = enemyCar.y + "px";
                     enemyCar.style.backgroundColor= randomColor(); 
                     enemyCar.style.left = Math.floor(Math.random() * 350) + "px";                
